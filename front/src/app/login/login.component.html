@@ -1,0 +1,54 @@
+
+<div ><div class="container d-flex justify-content-center align-items-center" style="top: 10px;"  >
+   
+    <div class="main-dcontainer">
+
+        <div class="pd-ltr-20 xs-pd-20-10">
+            <div class="min-height-200px">
+                <div class="page-header">
+                    <div class="row">
+                        <div class="col-md-6mm col-sm-12">
+<div  class="form-membership text-center" style="max-width: 4000px ; ">
+    <div class="form-wrapper">
+    
+        <br>
+        <h3 style="color: rgb(20, 176, 182); font-family: 'Lobster', cursive;">  Bienvenue</h3>
+        <hr>
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" checked="" id="customCheck1">
+         
+        </div>
+
+
+        <!-- form -->
+        <form action="" >
+            <div class="form-group">
+                <input type="text" class="form-control" name="email" placeholder="Email" required autofocus [(ngModel)]="email">
+            </div>
+            <div class="form-group">
+                <input type="password" name="mdp" class="form-control" placeholder="Mot de passe" required [(ngModel)]="mdp" >
+            </div>
+            <div class="form-group d-flex justify-content-between">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" checked="" id="customCheck1">
+                 
+                </div>
+       
+            </div>
+            <button class="btn btn-info btn-block"  (click)="login()" >Connexion</button>
+            <hr>
+           
+            <p class="text-muted">Vous n'avez pas de compte ?</p>
+            <a routerLink="/signin" class="btn btn-outline-info btn-sm"  >s'inscrire maintenant!</a>
+        </form>
+        <!-- ./ form -->
+                    </div></div></div></div></div></div>
+    
+    </div>
+    </div>
+</div>
+
+</div>
+<br>
+<br><br>
+<button class="btn btn-info btn-sm float-right mt-2 mr-2" routerLink='/'>Acceuil</button>

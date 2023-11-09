@@ -1,0 +1,155 @@
+<!-- partie lfou9 -->
+<div >
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+
+<style>
+
+html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
+.mySlides {display:all}
+.w3-tag, .fa {cursor:pointer}
+.w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+</style>
+</head>
+
+<div>
+<div class="w3-top"  >
+  <div class="w3-row w3-large w3-light-grey">
+    <div routerLink="/events" class="w3-col s3">
+      <a  class="w3-button w3-block">Acceuil</a>
+    </div>
+    <div class="w3-col s3">
+      <a  class="w3-button w3-block">Meilleurs</a>
+    </div>
+    <div  routerLink="/reclamation" class="w3-col s3">
+      <a class="w3-button w3-block">Réclamer</a>
+    </div>
+    <div routerLink="/login" class="w3-col s3">
+      <a  class="w3-button w3-block">login</a>
+    </div>
+  </div>
+</div>
+
+<div class="w3-content" style="max-width:1800px;margin-top:80px;margin-bottom:80px">
+
+ 
+
+  <!-- Slideshow <img class="img-fluid" src="assets/images/loginn.png" alt="alternative"> -->
+  <div class="w3-container">
+    <div class="w3-display-container mySlides">
+        <img class="img-fluid" src="assets/images/13.png" alt="alternative">
+     
+      <div class="w3-display-topleft w3-container w3-padding-32">
+       
+      </div>
+    </div>
+
+    <div class="w3-panel">
+      <h1 style="position: absolute;
+      left: 50%;
+      transform: translateX(-50%); color: rgb(0, 25, 134); font-family: 'Lobster', cursive;"><b>Soirées Ramadanesques</b></h1>
+     
+    </div>
+ 
+  </div>
+  
+  <!-- Grid -->
+  <div class="w3-row w3-container">
+    <div class="w3-center w3-padding-64">
+      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Nos Services</span>
+    </div>
+    <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-16">
+      <h3>Evenements</h3>
+      <p>les évenements durant les soirées de ramandan</p>
+    </div>
+
+    <div class="w3-col l3 m6 w3-grey w3-container w3-padding-16">
+      <h3>Restaurants</h3>
+      <p>on vous offre la possibilité de trouver les Restaurantsouverts pendant ramandan et la possibilité de faire une réservation </p>
+    </div>
+
+    <div class="w3-col l3 m6 w3-dark-grey w3-container w3-padding-16">
+      <h3>Publier vos Events</h3>
+      <p> On vous offre la possibilité de partager vos events ou bien vos restaurant affin d'Acceuillir les clients pendant Ramadhan</p>
+    </div>
+
+    <div class="w3-col l3 m6 w3-black w3-container w3-padding-16">
+      <h3>Demande d'adhésion</h3>
+      <p>Pour publier vos events il suffit de crée un compte et attendre votre demande de publication pour des droits bien concervés</p>
+    </div>
+  </div>
+
+  <!-- http://127.0.0.1:8000/storage/photos/ -->
+ 
+
+</div>
+
+
+
+
+
+
+</div>
+<!-- end partie lfou9 -->
+
+<div class="headder">
+  <div class="header-left">
+    <div class="menu-icon bi bi-list"></div>
+  
+    <div class="header-search">
+  
+        <div class="form-group mb-0">
+          <i class="dw dw-search2 search-icon"></i>
+          <input
+            type="text"
+            class="form-control search-input"
+            placeholder="Cherchez ici"
+            [(ngModel)]="lettre" (keyup)="searchEventsByLetter(lettre)"
+          />
+       
+        </div>
+
+    </div>
+  </div>
+
+</div>
+<br>
+
+<section class="articles">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let item of listeevents|paginate:{itemsPerPage : 3 , currentPage:page}"  style="margin-bottom: 20px;">
+      <article>
+       
+
+        <div class="article-wrapper align-items-center">
+          <figure>
+            <img  src="http://127.0.0.1:8000/storage/{{item.photo}}" alt="" />
+          </figure>
+          <div class="article-body">
+            <h2> {{item.nom}}</h2>
+            <p> Prix :  {{item.prix}}  </p>
+            <p> Propriétaire :  {{item.proprietere}} </p>
+            <p> Date :  {{item.date}} </p>
+            <p> Lieu : {{item.lieu}} </p>
+            <p [ngStyle]="{color:'blue'}" >Nombre de places disponibles : {{item.nbreplaces}} places disponibles</p>
+            <button class="btn btn-primary btn-block float-left mt-2 mr-2" routerLink="/reservation/{{item.id}}" ><i class="icon-copy bi bi-hand-index-thumb"> Réserver</i></button>
+          </div>
+     
+        </div>
+      </article>
+    
+    </div>
+    <pagination-controls
+    previousLabel="Prev"
+    nextLabel="Next"
+    (pageChange)="onTableDataChange($event)"
+  >
+  </pagination-controls>
+  </div>
+</section>
+
+</div>

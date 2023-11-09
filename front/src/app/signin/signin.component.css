@@ -1,0 +1,13 @@
+.background-image {
+  background-image: src="assets/images/13.png";
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  background-image: url('/assets/images/30.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+}
